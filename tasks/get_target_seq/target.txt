@@ -1,0 +1,4 @@
+WP_044828716.1 SAM-dependent chlorinase/fluorinase [Thalassospira sp. HJ]
+WP_052210519.1 SAM-dependent chlorinase/fluorinase [Thermoanaerobacter sp. YS13]
+WP_055895841.1 methionine ABC transporter ATP-binding protein [Leifsonia sp. Root227]
+
