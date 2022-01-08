@@ -39,11 +39,11 @@ parser_getseq.set_defaults(func=getseq.get_target_seq)
 
 
 # create the sub-parser for the "test" command
-parser_test = subparsers.add_parser('test', help='test',
-                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser_test.add_argument('-i', required=True,
-                         type=str, help='input test')
-parser_getseq.set_defaults(func=getseq.test)
+# parser_test = subparsers.add_parser('test', help='test',
+#                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+# parser_test.add_argument('-i', required=True,
+#                          type=str, help='input test')
+# parser_getseq.set_defaults(func=getseq.test)
 
 
 def main():

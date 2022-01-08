@@ -28,6 +28,6 @@ setup(
     include_package_data=True,
     python_requires=">=3.8",
     install_requires=[
-        "biopython=1.79"
+        "biopython"
     ]
 )
