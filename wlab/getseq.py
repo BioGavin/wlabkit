@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from Bio.Seq import Seq
+
 
 def get_target_seq(input, list, output, local_matching=False):
     with open(list, 'r') as f1:
@@ -24,6 +26,3 @@ def get_target_seq(input, list, output, local_matching=False):
     with open(output, 'w') as f3:
         f3.writelines(new_rna_db_ls)
 
-
-def test(i):
-    print(i)

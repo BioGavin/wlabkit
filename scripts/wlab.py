@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 
-
+import sys
+import os
+sys.path.append('/Users/zhouzhenyi/Desktop/wlab/wlab')
+print(sys.path)
 import argparse
-import getseq
+from wlab import getseq
+
+
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -26,8 +31,8 @@ parser_getseq.add_argument('-i', '--input_fasta', required=True,
                            type=str, help='fasta file for searching target sequences.')
 parser_getseq.add_argument('-l', '--target_list', required=True,
                            type=str, help='a list file containing target sequence headers.')
-parser_getseq.add_argument('-L', '--local_matching', action='store_true', default=False,
-                           help='add this arguments, if target list only locally matches the fasta file header.')
+# parser_getseq.add_argument('-L', '--local_matching', action='store_true', default=False,
+#                            help='add this arguments, if target list only locally matches the fasta file header.')
 parser_getseq.add_argument('-o', '--output_fasta', default='target.fasta',
                            type=str, help='output fasta file containing target sequences.')
 parser_getseq.set_defaults(func=getseq.get_target_seq)
@@ -43,11 +48,11 @@ parser_getseq.set_defaults(func=getseq.test)
 
 def main():
     args = parser.parse_args()
-    # getseq.get_target_seq(input=args.input_fasta,
-    #                       list=args.target_list,
-    #                       output=args.output_fasta,
-    #                       local_matching=args.local_matching)
-    getseq.test(i=args.i)
+    getseq.get_target_seq(input=args.input_fasta,
+                          list=args.target_list,
+                          output=args.output_fasta,
+                          local_matching=args.local_matching)
+    # getseq.test(i=args.i)
 
 
     # args_getseq = parser_getseq.parse_args()
@@ -56,8 +61,8 @@ def main():
     #                       output=args_getseq.output_fasta,
     #                       local_matching=args_getseq.local_matching)
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
 
 
 
