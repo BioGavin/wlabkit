@@ -2,7 +2,7 @@
 
 import sys
 import os
-sys.path.append('/Users/zhouzhenyi/Desktop/wlab/wlab')
+sys.path.append('/src/wlab')
 print(sys.path)
 import argparse
 from wlab import getseq
@@ -38,12 +38,12 @@ parser_getseq.add_argument('-o', '--output_fasta', default='target.fasta',
 parser_getseq.set_defaults(func=getseq.get_target_seq)
 
 
-# create the sub-parser for the "test" command
-# parser_test = subparsers.add_parser('test', help='test',
+# create the sub-parser for the "tests" command
+# parser_test = subparsers.add_parser('tests', help='tests',
 #                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 # parser_test.add_argument('-i', required=True,
-#                          type=str, help='input test')
-# parser_getseq.set_defaults(func=getseq.test)
+#                          type=str, help='input tests')
+# parser_getseq.set_defaults(func=getseq.tests)
 
 
 def main():
@@ -52,7 +52,7 @@ def main():
                           list=args.target_list,
                           output=args.output_fasta,
                           local_matching=args.local_matching)
-    # getseq.test(i=args.i)
+    # getseq.tests(i=args.i)
 
 
     # args_getseq = parser_getseq.parse_args()
