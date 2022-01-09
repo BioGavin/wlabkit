@@ -1,28 +1,17 @@
 #!/usr/bin/env python
 
-from Bio.Seq import Seq
+from Bio import SeqIO
 
 
-def get_target_seq(input, list, output, local_matching=False):
-    with open(list, 'r') as f1:
-        acc_ls = f1.readlines()
-    with open(input, 'r') as f2:
-        rna_db_ls = f2.readlines()
-    new_rna_db_ls = []
-    flag = 0
-    for line in rna_db_ls:
-        if line.startswith(">"):
-            if local_matching:
-                seqacc = line[1:].split(' ', 1)[0] + '\n'
-            else:
-                seqacc = line[1:]
-
-            if seqacc in acc_ls:
-                flag = 1  # target seq
-            else:
-                flag = 0  # not target seq
-        if flag == 1:
-            new_rna_db_ls.append(line)
-    with open(output, 'w') as f3:
-        f3.writelines(new_rna_db_ls)
-
+def get_target_seq(args):
+    with open(args.target_list, 'r') as fl:
+        target_seq_header = fl.read().splitlines()
+    target_records = []
+    for seq_record in SeqIO.parse(args.input_fasta, "fasta"):
+        seq_desc = seq_record.description
+        if seq_desc in target_seq_header:
+            target_records.append(seq_record)
+        seq_id = seq_record.id
+        if seq_id in target_seq_header:
+            target_records.append(seq_record)
+    SeqIO.write(target_records, args.output_fasta, "fasta")

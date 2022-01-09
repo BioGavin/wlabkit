@@ -19,3 +19,11 @@ get target sequences from a header list.
 
 ## Contact
 If you have any problems, don't hesitate to contact me. <gavinchou64@gmail.com>
+
+
+
+
+
+
+
+学习案例 twine
