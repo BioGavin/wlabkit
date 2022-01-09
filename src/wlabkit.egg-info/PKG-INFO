@@ -1,3 +1,19 @@
+Metadata-Version: 2.1
+Name: wlabkit
+Version: 0.0.3
+Summary: A toolkit to handle bio-data from WeiBin Lab.
+Home-page: https://github.com/BioGavin/wlab
+Author: Zhen-Yi Zhou
+Author-email: gavinchou64@gmail.com
+License: GPL
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 WLab
 ====
 
@@ -16,11 +32,11 @@ Python Package Index (PyPI) and on Conda.
 
 .. code:: shell
 
-   conda install wlabkit
+   conda install wlab
 
 .. code:: shell
 
-   pip install wlabkit
+   pip install wlab
 
 Subcommands
 -----------
@@ -34,3 +50,5 @@ Contact
 
 If you have any problems, don’t hesitate to contact me.
 gavinchou64@gmail.com
+
+

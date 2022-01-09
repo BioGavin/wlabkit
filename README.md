@@ -6,10 +6,10 @@ Similar data processing tasks occur frequently in my daily work though these tas
 ## Installation
 Binary installers for the latest released version are available at the Python Package Index (PyPI) and on Conda.
 ```shell
-conda install wlab
+conda install wlabkit
 ```
 ```shell
-pip install wlab
+pip install wlabkit
 ```
 
 ## Subcommands

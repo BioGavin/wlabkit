@@ -3,12 +3,13 @@
 import sys
 sys.path.append('/Users/zhouzhenyi/Desktop/wlab/src')
 import argparse
-from wlab import getseq
+from wlabkit import getseq
+import wlabkit
 
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
-    prog='wlab',
+    prog='wlabkit',
     formatter_class=argparse.RawDescriptionHelpFormatter,
     description='''
 This is a toolkit to handle bio-data from WeiBin Lab.
@@ -16,9 +17,10 @@ This is a toolkit to handle bio-data from WeiBin Lab.
 Author: Gavin <gavinchou64@gmail.com>
 Source code: https://github.com/BioGavin/wlab''',
     epilog='''
-Use "wlab [subcommand] --help" for more information about a command''')
+Use "wlabkit [subcommand] --help" for more information about a command''')
 
-parser.add_argument("-v", "--version", action="version", version="%(prog)s version ")
+
+parser.add_argument("-v", "--version", action="version", version="%(prog)s version {}".format(wlabkit.__version__))
 
 # create the sub-level parser
 subparsers = parser.add_subparsers(title='subcommands')
