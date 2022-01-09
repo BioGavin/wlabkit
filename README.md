@@ -1,4 +1,4 @@
-# WLab
+# WLabKit
 **This is a toolkit to handle bio-data from WeiBin Lab.**
 
 Similar data processing tasks occur frequently in my daily work though these tasks are not complicated. To avoid change the code repeatedly, I set up this project for the convenience of laboratory members and others.

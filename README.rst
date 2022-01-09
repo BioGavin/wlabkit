@@ -1,4 +1,4 @@
-WLab
+WLabKit
 ====
 
 **This is a toolkit to handle bio-data from WeiBin Lab.**
