@@ -14,7 +14,20 @@ conda install wlabkit
 pip install wlabkit
 ```
 
+## Help
+Get help information, you can run:
+```shell
+wlabkit -h
+```
+
+If you want to get help information of subcommand, you can run:
+```shell
+wlabkit [subcommand] -h
+```
+
 ## Subcommands
+Subcommands are as follows
+
 - ***getseq***
 
 get target sequences from a header list.
