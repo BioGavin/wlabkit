@@ -56,7 +56,7 @@ wlabkit antismash_getdir -i GCF_000466165.1.zip -t 'lassopeptide'
 
 ```shell
 # analyse multiple antiSMASH result folders
-for f in `ls *.zip`; do wlabkit antismash_getdir -i $f -t target.list >> target.txt;done
+for f in `ls *.zip`; do wlabkit antismash_getdir -i $f -t target.list >> target.txt; done
 ```
 
 
