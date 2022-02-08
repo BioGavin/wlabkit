@@ -1,1 +1,3 @@
-__version__ = "0.0.3"
+#!/usr/bin/env python
+
+__version__ = "0.0.8"

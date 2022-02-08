@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: wlabkit
-Version: 0.0.3
+Version: 0.0.8
 Summary: A toolkit to handle bio-data from WeiBin Lab.
 Home-page: https://github.com/BioGavin/wlab
 Author: Zhen-Yi Zhou
@@ -14,7 +14,7 @@ Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-WLab
+WLabKit
 ====
 
 **This is a toolkit to handle bio-data from WeiBin Lab.**
@@ -32,11 +32,11 @@ Python Package Index (PyPI) and on Conda.
 
 .. code:: shell
 
-   conda install wlab
+   conda install wlabkit
 
 .. code:: shell
 
-   pip install wlab
+   pip install wlabkit
 
 Subcommands
 -----------

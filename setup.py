@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from setuptools import find_packages
 from setuptools import setup
 import codecs
@@ -40,6 +42,10 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "biopython",
-        "numpy"
+        "numpy",
+        "pandas",
+        "python-dateutil",
+        "pytz",
+        "six"
     ]
 )
