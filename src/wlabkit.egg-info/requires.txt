@@ -1,6 +1,0 @@
-biopython
-numpy
-pandas
-python-dateutil
-pytz
-six
