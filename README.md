@@ -32,7 +32,7 @@ wlabkit [subcommand] -h
 ```
 
 ## Subcommands
-Subcommands are as follows. You can run the following command, and the relevant files are in the test folder.
+Subcommands are as follows. You can run the following command, and the relevant files are in the `test_data` folder.
 
 - ***getseq***
 
@@ -62,5 +62,4 @@ for f in `ls *.zip`; do wlabkit antismash_getdir -i $f -t target.list >> target.
 
 ## Contact
 If you have any problems, don't hesitate to contact me. <gavinchou64@gmail.com>
-
 
