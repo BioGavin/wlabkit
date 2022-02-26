@@ -2,7 +2,7 @@
 
 import argparse
 import wlabkit
-from wlabkit import getseq, parse_antismash_result, gbk2fasta
+from wlabkit import getseq, parse_antismash_result, parse_gbk
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -11,8 +11,9 @@ parser = argparse.ArgumentParser(
     description='''
 This is a toolkit to handle bio-data from WeiBin Lab.
 
-Author: Gavin <gavinchou64@gmail.com>
-Source code: https://github.com/BioGavin/wlab''',
+Author: Zhen-Yi Zhou 
+E-mail: gavinchou64@gmail.com
+Source code: https://github.com/BioGavin/wlabkit''',
     epilog='''
 Use "wlabkit [subcommand] --help" for more information about a command''')
 
@@ -52,10 +53,23 @@ parser_getseq.add_argument('-i', '--input', required=True, metavar='PATH',
                            type=str, help='a gbk file or a folder containing multiple gbk files')
 parser_getseq.add_argument('-m', '--merge', default=False,
                            action='store_true',
-                           help='Add this parameter if you want your multiple output files to be merged into one file.')
+                           help='add this parameter if you want your multiple output files to be merged into one file.')
 parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
-                           type=str, help='A file path if output is a file. A folder path if output is multiple files.')
-parser_getseq.set_defaults(func=gbk2fasta.gbk2fasta_pipeline)
+                           type=str, help='a file path if output is a file. a folder path if output is multiple files.')
+parser_getseq.set_defaults(func=parse_gbk.gbk2fasta_pipeline)
+
+# create the sub-parser for the "gbk2fasta" command
+parser_getseq = subparsers.add_parser('ex_cds',
+                                      help='extract CDS sequences from bgk files to specified fasta files',
+                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser_getseq.add_argument('-i', '--input', required=True, metavar='PATH',
+                           type=str, help='a gbk file or a folder containing multiple gbk files')
+parser_getseq.add_argument('-m', '--merge', default=False,
+                           action='store_true',
+                           help='add this parameter if you want your multiple output files to be merged into one file.')
+parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
+                           type=str, help='a file path if output is a file. a folder path if output is multiple files.')
+parser_getseq.set_defaults(func=parse_gbk.ex_cds_pipeline)
 
 
 def main():

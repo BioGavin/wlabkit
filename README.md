@@ -25,7 +25,7 @@ pip install wlabkit
 
 
 
-### Latest version: 0.0.16
+### Latest version: 0.0.20
 
 ⚠️***Attention:  Only the latest version has all the functions*** 
 
@@ -65,7 +65,7 @@ wlabkit getseq -i search.fasta -l header.txt -o target.fasta
 
 - ***antismash_getdir***
 
-get gbk file dir of target BGC type from an antiSMASH result folder
+get gbk file dir of target BGC type from an antiSMASH result folder.
 
 examples:
 
@@ -83,7 +83,7 @@ for f in `ls *.zip`; do wlabkit antismash_getdir -i $f -t target.list >> target.
 
 - ***gbk2fasta***
 
-convert one or more gbk files to specified fasta files
+convert one or more gbk files to specified fasta files.
 
 examples:
 
@@ -99,6 +99,37 @@ wlabkit gbk2fasta -i gbk -o gbk.fasta -m
 # convert multiple gbk files to corresponding fasta files
 wlabkit gbk2fasta -i gbk -o fasta  # fasta is a folder path
 ```
+
+
+
+- ***ex_cds***
+
+
+extract CDS sequences from bgk files to specified fasta files
+
+
+examples:
+
+```shell
+# convert a gbk file to a fasta file
+wlabkit ex_cds -i region001.gbk -o region001.fasta
+```
+
+```shell
+# convert multiple gbk files to a fasta file
+wlabkit ex_cds -i gbk -o gbk.fasta -m
+
+# convert multiple gbk files to corresponding fasta files
+wlabkit ex_cds -i gbk -o fasta  # fasta is a folder path
+```
+
+
+
+## Tasks
+
+`tasks` folder holds some code tasks that are useful but not suitable for writing to the command line.
+
+* [parse_xml](tasks/parse_xml): parsing an XML file to extract target information
 
 
 
