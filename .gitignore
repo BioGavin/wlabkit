@@ -3,3 +3,5 @@
 # PyPI build
 /dist
 /src/wlabkit.egg-info
+
+/plot

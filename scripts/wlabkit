@@ -2,9 +2,7 @@
 
 import argparse
 import wlabkit
-from wlabkit import getseq, parse_antismash_result
-
-
+from wlabkit import getseq, parse_antismash_result, gbk2fasta
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -17,7 +15,6 @@ Author: Gavin <gavinchou64@gmail.com>
 Source code: https://github.com/BioGavin/wlab''',
     epilog='''
 Use "wlabkit [subcommand] --help" for more information about a command''')
-
 
 parser.add_argument("-v", "--version", action="version", version="%(prog)s version {}".format(wlabkit.__version__))
 
@@ -36,7 +33,8 @@ parser_getseq.add_argument('-o', '--output_fasta', default='target.fasta',
 parser_getseq.set_defaults(func=getseq.get_target_seq)
 
 # create the sub-parser for the "antismash_getdir" command
-parser_getseq = subparsers.add_parser('antismash_getdir', help='get gbk file dir of target BGC type from an antiSMASH result folder',
+parser_getseq = subparsers.add_parser('antismash_getdir',
+                                      help='get gbk file dir of target BGC type from an antiSMASH result folder',
                                       formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser_getseq.add_argument('-i', '--input_path', required=True,
                            type=str, help='path of antiSMASH result folder or Zip file')
@@ -46,14 +44,24 @@ parser_getseq.add_argument('-o', '--output_file', required=False,
                            type=str, help='output text file containing path of target gbk file')
 parser_getseq.set_defaults(func=parse_antismash_result.get_target_type_gbk_dir)
 
+# create the sub-parser for the "gbk2fasta" command
+parser_getseq = subparsers.add_parser('gbk2fasta',
+                                      help='convert one or more gbk files to specified fasta files',
+                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser_getseq.add_argument('-i', '--input', required=True, metavar='PATH',
+                           type=str, help='a gbk file or a folder containing multiple gbk files')
+parser_getseq.add_argument('-m', '--merge', default=False,
+                           action='store_true',
+                           help='Add this parameter if you want your multiple output files to be merged into one file.')
+parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
+                           type=str, help='A file path if output is a file. A folder path if output is multiple files.')
+parser_getseq.set_defaults(func=gbk2fasta.gbk2fasta_pipeline)
+
 
 def main():
     args = parser.parse_args()
     args.func(args)
 
+
 if __name__ == '__main__':
     main()
-
-
-
-

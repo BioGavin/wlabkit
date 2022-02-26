@@ -5,7 +5,10 @@
 
 Similar data processing tasks occur frequently in my daily work though these tasks are not complicated. To avoid change the code repeatedly, I set up this project for the convenience of laboratory members and others.
 
+
+
 ## Installation
+
 Binary installers for the latest released version are available at the Python Package Index (PyPI) and on Conda.
 
 Before installing wlabkit, make sure the dependency packages are installed.
@@ -20,7 +23,16 @@ conda install wlabkit
 pip install wlabkit
 ```
 
+
+
+### Latest version: 0.0.16
+
+⚠️***Attention:  Only the latest version has all the functions*** 
+
+
+
 ## Help
+
 Get help information, you can run:
 ```shell
 wlabkit -h
@@ -31,8 +43,13 @@ If you want to get help information of subcommand, you can run:
 wlabkit [subcommand] -h
 ```
 
+
+
 ## Subcommands
+
 Subcommands are as follows. You can run the following command, and the relevant files are in the `test_data` folder.
+
+
 
 - ***getseq***
 
@@ -42,6 +59,9 @@ examples:
 ```shell
 wlabkit getseq -i search.fasta -l header.txt -o target.fasta
 ```
+
+
+
 
 - ***antismash_getdir***
 
@@ -60,6 +80,29 @@ for f in `ls *.zip`; do wlabkit antismash_getdir -i $f -t target.list >> target.
 ```
 
 
+
+- ***gbk2fasta***
+
+convert one or more gbk files to specified fasta files
+
+examples:
+
+```shell
+# convert a gbk file to a fasta file
+wlabkit gbk2fasta -i region001.gbk -o region001.fasta
+```
+
+```shell
+# convert multiple gbk files to a fasta file
+wlabkit gbk2fasta -i gbk -o gbk.fasta -m
+
+# convert multiple gbk files to corresponding fasta files
+wlabkit gbk2fasta -i gbk -o fasta  # fasta is a folder path
+```
+
+
+
 ## Contact
+
 If you have any problems, don't hesitate to contact me. <gavinchou64@gmail.com>
 
