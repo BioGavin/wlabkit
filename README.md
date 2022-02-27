@@ -157,6 +157,8 @@ wlabkit exsl_seq -i fasta -l 0 -r 100 -o slseq  # slseq is an existing folder pa
 
 * [parse_xml](tasks/parse_xml): parsing an XML file to extract target information
 
+- [Excel2fasta](tasks/excel2fasta): extracting sequences and information from Excel file to Fasta file
+
 
 
 ## Contact
