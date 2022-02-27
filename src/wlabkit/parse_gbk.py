@@ -40,7 +40,7 @@ def get_seq_records(gene_file, file_type):
     return seq_records
 
 
-def gbk2fasta(gbk, merge=True):
+def gbk2fasta(gbk, merge=False):
     """Convert gbk file to fasta file.
 
     Args:
@@ -122,7 +122,7 @@ def find_cds(gbk):
     return cds_seq_records
 
 
-def ex_cds(gbk, merge=True):
+def ex_cds(gbk, merge=False):
     """Extract CDS sequences from gbk files.
 
     Args:

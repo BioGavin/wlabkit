@@ -2,7 +2,7 @@
 
 import argparse
 import wlabkit
-from wlabkit import getseq, parse_antismash_result, parse_gbk
+from wlabkit import getseq, parse_antismash_result, parse_gbk, exsl_seq
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -58,7 +58,7 @@ parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
                            type=str, help='a file path if output is a file. a folder path if output is multiple files.')
 parser_getseq.set_defaults(func=parse_gbk.gbk2fasta_pipeline)
 
-# create the sub-parser for the "gbk2fasta" command
+# create the sub-parser for the "ex_cds" command
 parser_getseq = subparsers.add_parser('ex_cds',
                                       help='extract CDS sequences from bgk files to specified fasta files',
                                       formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -70,6 +70,25 @@ parser_getseq.add_argument('-m', '--merge', default=False,
 parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
                            type=str, help='a file path if output is a file. a folder path if output is multiple files.')
 parser_getseq.set_defaults(func=parse_gbk.ex_cds_pipeline)
+
+# create the sub-parser for the "exsl_seq" command
+parser_getseq = subparsers.add_parser('exsl_seq',
+                                      help='extract specified length sequences in fasta.',
+                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser_getseq.add_argument('-i', '--input', required=True, metavar='PATH',
+                           type=str, help='a fasta file or a folder containing multiple fasta files')
+parser_getseq.add_argument('-m', '--merge', default=False,
+                           action='store_true',
+                           help='add this parameter if you want your multiple output files to be merged into one file.')
+parser_getseq.add_argument('-l', '--left', required=True, type=int, metavar='INT',
+                           help='Specifies the minimum length of a sequence.'
+                                'The left edge of the length range and includes the edge value.')
+parser_getseq.add_argument('-r', '--right', required=True, type=int, metavar='INT',
+                           help='Specifies the maximum length of a sequence.'
+                                'The right edge of the length range and includes the edge value.')
+parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
+                           type=str, help='a file path if output is a file. a folder path if output is multiple files.')
+parser_getseq.set_defaults(func=exsl_seq.exsl_seq_pipeline)
 
 
 def main():

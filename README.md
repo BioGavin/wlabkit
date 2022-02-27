@@ -25,7 +25,7 @@ pip install wlabkit
 
 
 
-### Latest version: 0.0.20
+### Latest version: 0.0.24
 
 ⚠️***Attention:  Only the latest version has all the functions*** 
 
@@ -97,7 +97,7 @@ wlabkit gbk2fasta -i region001.gbk -o region001.fasta
 wlabkit gbk2fasta -i gbk -o gbk.fasta -m
 
 # convert multiple gbk files to corresponding fasta files
-wlabkit gbk2fasta -i gbk -o fasta  # fasta is a folder path
+wlabkit gbk2fasta -i gbk -o fasta  # fasta is an existing folder path
 ```
 
 
@@ -111,17 +111,43 @@ extract CDS sequences from bgk files to specified fasta files
 examples:
 
 ```shell
-# convert a gbk file to a fasta file
+# extract CDS from a gbk file and save to a fasta file
 wlabkit ex_cds -i region001.gbk -o region001.fasta
 ```
 
 ```shell
-# convert multiple gbk files to a fasta file
-wlabkit ex_cds -i gbk -o gbk.fasta -m
+# extract CDS from multiple gbk files and save to a fasta file
+wlabkit ex_cds -i gbk -o cds.fasta -m
 
-# convert multiple gbk files to corresponding fasta files
-wlabkit ex_cds -i gbk -o fasta  # fasta is a folder path
+# extract CDS multiple gbk files and save to corresponding fasta files
+wlabkit ex_cds -i gbk -o cds  # cds is an existing folder path
 ```
+
+
+
+- ***exsl_seq***
+
+
+extract specified length sequences in fasta
+
+
+examples:
+
+```shell
+# extract specified length from a fasta file
+# The parameters 'l' and 'r' are the left and right values of a closed interval, respectively.
+wlabkit exsl_seq -i search.fasta -l 0 -r 100 -o length0-100.fasta
+```
+
+```shell
+# extract specified length from multiple fasta files and save to a fasta file
+wlabkit exsl_seq -i fasta -l 0 -r 100 -o length0-100.fasta -m
+
+# extract specified length from multiple fasta files and save to corresponding fasta files
+wlabkit exsl_seq -i fasta -l 0 -r 100 -o slseq  # slseq is an existing folder path
+```
+
+
 
 
 
