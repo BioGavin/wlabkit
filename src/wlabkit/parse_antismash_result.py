@@ -118,4 +118,3 @@ def get_target_type_gbk_dir(args):
     else:
         for k, v in target_dict.items():
             print(f'{k}\t{v}')
-

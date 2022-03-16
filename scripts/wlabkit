@@ -2,7 +2,7 @@
 
 import argparse
 import wlabkit
-from wlabkit import getseq, parse_antismash_result, parse_gbk, exsl_seq
+from wlabkit import getseq, parse_antismash_result, parse_gbk, exsl_seq, parse_antismash_html
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -22,6 +22,7 @@ parser.add_argument("-v", "--version", action="version", version="%(prog)s versi
 # create the sub-level parser
 subparsers = parser.add_subparsers(title='subcommands')
 
+
 # create the sub-parser for the "getseq" command
 parser_getseq = subparsers.add_parser('getseq', help='get target sequences from a header list',
                                       formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -29,9 +30,10 @@ parser_getseq.add_argument('-i', '--input_fasta', required=True,
                            type=str, help='fasta file for searching target sequences')
 parser_getseq.add_argument('-l', '--target_list', required=True,
                            type=str, help='a list file containing target sequence headers')
-parser_getseq.add_argument('-o', '--output_fasta', default='target.fasta',
+parser_getseq.add_argument('-o', '--output_fasta', required=True,
                            type=str, help='output fasta file containing target sequences')
 parser_getseq.set_defaults(func=getseq.get_target_seq)
+
 
 # create the sub-parser for the "antismash_getdir" command
 parser_getseq = subparsers.add_parser('antismash_getdir',
@@ -41,9 +43,24 @@ parser_getseq.add_argument('-i', '--input_path', required=True,
                            type=str, help='path of antiSMASH result folder or Zip file')
 parser_getseq.add_argument('-t', '--target_type', required=True,
                            type=str, help='a type of target BGC or a text file containing a list of target BGC type')
-parser_getseq.add_argument('-o', '--output_file', required=False,
+parser_getseq.add_argument('-o', '--output_file', required=True,
                            type=str, help='output text file containing path of target gbk file')
 parser_getseq.set_defaults(func=parse_antismash_result.get_target_type_gbk_dir)
+
+
+# create the sub-parser for the "antismash_exstructure" command
+parser_getseq = subparsers.add_parser('antismash_exstructure',
+                                      help='parse antiSMASH index.html file to extract NRPS/PKS products',
+                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser_getseq.add_argument('-i', '--input_html', required=False, metavar='PATH', default=None,
+                           type=str, help='path of index html in antiSMASH result folder.'
+                                          'a list file containing one path per line is possible.')
+parser_getseq.add_argument('-l', '--html_list', required=False, metavar='PATH', default=None,
+                           type=str, help='a list file containing one path per line is possible')
+parser_getseq.add_argument('-o', '--output_file', required=True, metavar='PATH',
+                           type=str, help='path of output tsv file')
+parser_getseq.set_defaults(func=parse_antismash_html.get_antismash_structures)
+
 
 # create the sub-parser for the "gbk2fasta" command
 parser_getseq = subparsers.add_parser('gbk2fasta',
@@ -54,9 +71,10 @@ parser_getseq.add_argument('-i', '--input', required=True, metavar='PATH',
 parser_getseq.add_argument('-m', '--merge', default=False,
                            action='store_true',
                            help='add this parameter if you want your multiple output files to be merged into one file.')
-parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
+parser_getseq.add_argument('-o', '--output', required=True, metavar='PATH',
                            type=str, help='a file path if output is a file. a folder path if output is multiple files.')
 parser_getseq.set_defaults(func=parse_gbk.gbk2fasta_pipeline)
+
 
 # create the sub-parser for the "ex_cds" command
 parser_getseq = subparsers.add_parser('ex_cds',
@@ -67,9 +85,10 @@ parser_getseq.add_argument('-i', '--input', required=True, metavar='PATH',
 parser_getseq.add_argument('-m', '--merge', default=False,
                            action='store_true',
                            help='add this parameter if you want your multiple output files to be merged into one file.')
-parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
+parser_getseq.add_argument('-o', '--output', required=True, metavar='PATH',
                            type=str, help='a file path if output is a file. a folder path if output is multiple files.')
 parser_getseq.set_defaults(func=parse_gbk.ex_cds_pipeline)
+
 
 # create the sub-parser for the "exsl_seq" command
 parser_getseq = subparsers.add_parser('exsl_seq',
@@ -86,9 +105,10 @@ parser_getseq.add_argument('-l', '--left', required=True, type=int, metavar='INT
 parser_getseq.add_argument('-r', '--right', required=True, type=int, metavar='INT',
                            help='Specifies the maximum length of a sequence.'
                                 'The right edge of the length range and includes the edge value.')
-parser_getseq.add_argument('-o', '--output', required=False, metavar='PATH',
+parser_getseq.add_argument('-o', '--output', required=True, metavar='PATH',
                            type=str, help='a file path if output is a file. a folder path if output is multiple files.')
 parser_getseq.set_defaults(func=exsl_seq.exsl_seq_pipeline)
+
 
 
 def main():

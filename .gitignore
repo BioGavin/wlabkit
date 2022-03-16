@@ -4,4 +4,8 @@
 /dist
 /src/wlabkit.egg-info
 
-/plot
+/plots
+
+/tasks
+!/tasks/parse_json
+!/tasks/parse_antismash
