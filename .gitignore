@@ -4,7 +4,6 @@
 /dist
 /src/wlabkit.egg-info
 
-/plots
 
 /tasks
 !/tasks/parse_json
