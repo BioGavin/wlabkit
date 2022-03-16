@@ -5,7 +5,7 @@
 /src/wlabkit.egg-info
 
 
-/tasks
-!/tasks/parse_json
-!/tasks/parse_antismash
-!/tasks/README.md
+
+/tasks/parse_json
+/tasks/parse_antismash
+
