@@ -5,7 +5,15 @@
 /src/wlabkit.egg-info
 
 
+/tasks
+!/tasks/excel2fasta
+!/tasks/parse_xml
 
-/tasks/parse_json
-/tasks/parse_antismash
+
+
+/plots
+!/plots/pheatmap
+!/plots/network/molecular_similarity_network
+
+
 
