@@ -26,16 +26,13 @@ Similar data processing tasks occur frequently in my daily work though these tas
 
 ## Installation
 
-Binary installers for the latest released version are available at the Python Package Index (PyPI) and on Conda.
+Binary installers for the latest released version are available at the Python Package Index (PyPI).
 
-Before installing wlabkit, make sure the dependency packages are installed.
+Before installing wlabkit, I recommend you to use conda to install environment dependencies.
 ```shell
-pip install numpy biopython pandas
+conda create -n wlabkit python=3.8 numpy biopython pandas beautifulsoup4
 ```
-Then, you can run (At present, only pip installing is allowed):
-```shell
-conda install wlabkit
-```
+Then, you can run:
 ```shell
 pip install wlabkit
 ```
