@@ -7,6 +7,15 @@ Similar data processing tasks occur frequently in my daily work though these tas
 
 
 
+# Contents
+
+1. [Installation](#sec_install)</br>
+
+2. [Usage](#sec_use)</br>
+
+
+
+<a name="sec_install"></a>
 ## Installation
 
 Binary installers for the latest released version are available at the Python Package Index (PyPI) and on Conda.
@@ -30,6 +39,8 @@ pip install wlabkit
 ⚠️***Attention:  Only the latest version has all the functions*** 
 
 
+
+<a name="sec_use"></a>
 
 ## Help
 
