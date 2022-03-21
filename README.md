@@ -13,9 +13,17 @@ Similar data processing tasks occur frequently in my daily work though these tas
 
 2. [Usage](#sec_use)</br>
 
+   2.1 [Sequence Processing](#sec_seq_proc)</br>
+
+   2.2 [antiSMASH Results Processing](#sec_antiSMASH_proc)</br>
+
+3. [Other Source](#sec_others)</br>
+4. [Contact](#sec_contact)</br>
+
 
 
 <a name="sec_install"></a>
+
 ## Installation
 
 Binary installers for the latest released version are available at the Python Package Index (PyPI) and on Conda.
@@ -61,6 +69,8 @@ wlabkit [subcommand] -h
 Subcommands are as follows. You can run the following command, and the relevant files are in the `test_data` folder.
 
 
+
+<a name="sec_seq_proc"></a>
 
 ### Sequence Processing
 
@@ -143,7 +153,7 @@ wlabkit exsl_seq -i fasta -l 0 -r 100 -o slseq  # slseq is an existing folder pa
 
 
 
-
+<a name="sec_antiSMASH_proc"></a>
 
 ### antiSMASH Results Processing
 
@@ -186,6 +196,8 @@ wlabkit antismash_exstructure -l index_html.list -o structures.tsv
 
 
 
+<a name="sec_others"></a>
+
 ## Other Resource
 
 - [tasks folder](/tasks) holds some code tasks that are useful but not suitable for writing to the command line.
@@ -193,6 +205,8 @@ wlabkit antismash_exstructure -l index_html.list -o structures.tsv
 - [plots folder](plots) holds some sample code for plotting.
 
 
+
+<a name="sec_contact"></a>
 
 ## Contact
 
