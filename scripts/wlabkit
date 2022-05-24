@@ -34,6 +34,17 @@ parser_getseq.add_argument('-o', '--output_fasta', required=True,
                            type=str, help='output fasta file containing target sequences')
 parser_getseq.set_defaults(func=getseq.get_target_seq)
 
+# create the sub-parser for the "getseq2" command
+parser_getseq = subparsers.add_parser('getseq2', help='get target sequences by keyword in header',
+                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser_getseq.add_argument('-i', '--input_fasta', required=True,
+                           type=str, help='fasta file for searching target sequences')
+parser_getseq.add_argument('-l', '--keyword_list', required=True,
+                           type=str, help='a list file containing keywords')
+parser_getseq.add_argument('-o', '--output_fasta', required=True,
+                           type=str, help='output fasta file containing target sequences')
+parser_getseq.set_defaults(func=getseq.get_target_seq2)
+
 
 # create the sub-parser for the "antismash_getdir" command
 parser_getseq = subparsers.add_parser('antismash_getdir',

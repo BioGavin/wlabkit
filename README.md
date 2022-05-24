@@ -39,7 +39,7 @@ pip install wlabkit
 
 
 
-### Latest version: 0.6.0
+### Latest version: 0.7.0
 
 ⚠️***Attention:  Only the latest version has all the functions*** 
 
@@ -79,6 +79,20 @@ examples:
 ```shell
 wlabkit getseq -i search.fasta -l header.txt -o target.fasta
 ```
+
+
+
+- ***getseq2***
+
+get target sequences by keyword in header.
+
+examples:
+
+```shell
+wlabkit getseq2 -i search.fasta -l keyword.txt -o target.fasta
+```
+
+
 
 
 
