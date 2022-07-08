@@ -2,7 +2,7 @@
 
 import argparse
 import wlabkit
-from wlabkit import getseq, parse_antismash_result, parse_gbk, exsl_seq, parse_antismash_html
+from wlabkit import getseq, parse_antismash_result, parse_gbk, exsl_seq, parse_antismash_html, get_seq_header
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -120,6 +120,15 @@ parser_getseq.add_argument('-o', '--output', required=True, metavar='PATH',
                            type=str, help='a file path if output is a file. a folder path if output is multiple files.')
 parser_getseq.set_defaults(func=exsl_seq.exsl_seq_pipeline)
 
+
+# create the sub-parser for the "getseqheader" command
+parser_getseq = subparsers.add_parser('getseqheader', help='get seq header for each fasta file',
+                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser_getseq.add_argument('-i', '--fasta_list', required=True,
+                           type=str, help='a list file containing path of fasta files')
+parser_getseq.add_argument('-o', '--output_tsv', required=True,
+                           type=str, help='output tsv file containing seq headers')
+parser_getseq.set_defaults(func=get_seq_header.get_seq_header)
 
 
 def main():

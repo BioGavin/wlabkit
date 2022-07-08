@@ -39,7 +39,7 @@ pip install wlabkit
 
 
 
-### Latest version: 0.7.0
+### Latest version: 0.8.0
 
 ⚠️***Attention:  Only the latest version has all the functions*** 
 
@@ -93,6 +93,23 @@ wlabkit getseq2 -i search.fasta -l keyword.txt -o target.fasta
 ```
 
 
+
+- ***getseqheader***
+
+get seq header for each fasta file.
+
+examples:
+
+```bash
+wlabkit getseqheader -i fasta.list -o header.tsv
+```
+
+tsv output example:
+
+| file_name     | header                            |
+| ------------- | --------------------------------- |
+| bin.112.fasta | NODE_1_length_45501_cov_35.865578 |
+| bin.112.fasta | NODE_2_length_30738_cov_29.303865 |
 
 
 
