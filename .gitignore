@@ -4,16 +4,9 @@
 /dist
 /src/wlabkit.egg-info
 
-
 /tasks
-!/tasks/excel2fasta
-!/tasks/parse_xml
-
-
 
 /plots
-!/plots/pheatmap
-!/plots/network/molecular_similarity_network
 
-
+/astool/test_data
 
