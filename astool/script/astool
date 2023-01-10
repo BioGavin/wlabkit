@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 
 import argparse
 import astool
-from astool import ex_smiles, cds_len, gbk2fasta
+from astool import ex_smiles, cds_len, cdsfromgbk2fasta
 
 # create the top-level parser
 parser = argparse.ArgumentParser(
@@ -52,7 +52,7 @@ parser_getseq.set_defaults(func=cds_len.cds_len)
 
 
 # create the sub-parser for the "gbk2fasta" command
-parser_getseq = subparsers.add_parser('gbk2fasta', help='Convert a gbk file to a fasta file.',
+parser_getseq = subparsers.add_parser('cdsfromgbk2fasta', help='Convert CDS from a gbk file to a fasta file.',
                                       formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser_getseq.add_argument('-i', '--gbk_dir', required=True,
                            type=str,
@@ -61,7 +61,7 @@ parser_getseq.add_argument('-o', '--fasta_dir', required=True,
                            type=str, help='directory of a output fasta file.')
 parser_getseq.add_argument('-v', '--verbose', required=False, default=False, action='store_true',
                            help='print out details as commands are run.')
-parser_getseq.set_defaults(func=gbk2fasta.gbk2fasta)
+parser_getseq.set_defaults(func=cdsfromgbk2fasta.cdsfromgbk2fasta)
 
 
 def main():

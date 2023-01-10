@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+# Usage: ex_ripp_from_gbk.py gbk.list output.tsv
 
 import os
 import sys

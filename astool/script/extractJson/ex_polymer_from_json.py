@@ -1,4 +1,5 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
+#Usage: python3 ex_polymer_from_json.py json.list output.tsv
 
 # """Extract NRPS polymer prediction.
 # Applicable antiSMASH version 5.2.0

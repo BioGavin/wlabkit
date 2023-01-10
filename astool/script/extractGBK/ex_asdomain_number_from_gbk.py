@@ -20,7 +20,7 @@ if __name__ == '__main__':
         gbk_dir_ls = f.read().splitlines()
     filename, bgc_type, bgc_length, number_domain, smiles = [], [], [], [], []
     for gbk_dir in gbk_dir_ls:
-        print(gbk_dir)
+        # print(gbk_dir)
         gbk_file = AntismashRegionGBKParser(gbk_dir)
         if not gbk_file.ex_smiles():
             smiles.append(None)

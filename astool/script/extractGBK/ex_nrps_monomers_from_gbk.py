@@ -9,7 +9,7 @@ from astool.antismash_utils import AntismashRegionGBKParser
 from astool.utils import get_gbk_dir_ls
 
 if __name__ == '__main__':
-    input_gbk = sys.argv[1]
+    input_gbk, output_tsv = sys.argv[1:3]
     file_name, locus_tag, monomers, count = [], [], [], []
     for gbk_dir in get_gbk_dir_ls(input_gbk):
         try:
@@ -28,4 +28,4 @@ if __name__ == '__main__':
         "locus_tag": locus_tag,
         "monomers": monomers,
         "count": count
-    }).to_csv('monomers.tsv', sep='\t', index=False)
+    }).to_csv(output_tsv, sep='\t', index=False)

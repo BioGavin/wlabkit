@@ -30,7 +30,8 @@ def get_cds_len(cds_records):
         cds_lenth_records = []
         for cds in cds_chunk:
             CDSLengthRecord = namedtuple('CDSLengthRecord', ['record_id', 'locus_tag', 'length'])
-            record_id, locus_tag, translation = cds
+            # record_id, locus_tag, translation = cds
+            record_id, location, locus_tag, translation = cds
             length = len(translation)
             cds_lenth_record = CDSLengthRecord(record_id, locus_tag, length)
             cds_lenth_records.append(cds_lenth_record)
@@ -40,6 +41,8 @@ def get_cds_len(cds_records):
 def cds_len(args):
     gbk_dir, output, verbose = args.gbk_dir, args.output, args.verbose
     cds_records = get_cds_records(gbk_dir, verbose)
+    # for i in cds_records:
+    #     print(i)
     cds_length_records = get_cds_len(cds_records)
     cds_length_df = gen_dataframe(cds_length_records)
     save_dataframe2tsv(cds_length_df, output)
