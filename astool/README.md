@@ -134,12 +134,11 @@ ex_ripp_from_gbk.py gbk.list output.tsv
 
 output.tsv:
 
-| gbk_name                       | leader_seq                          | core_seq                        |
-| ------------------------------ | ----------------------------------- | ------------------------------- |
-| c00048_GMBC10....region001.gbk | MGIVVNRQLNVHGG                      | STSALFNIEICSAKKPKNQKGFYTE       |
-| c00048_GMBC10....region001.gbk | MSINEKSIVGESFEDLSAADMAMLTGRNDDGVAPA | SLSFAVSVLSVSFSACSATVVTRLASCGNCK |
-
-
+| gbk_file                                                     | gbk_name                 | leader_seq                     | core_seq                            |
+| ------------------------------------------------------------ | ------------------------ | ------------------------------ | ----------------------------------- |
+| antiSMASH/GCA_000147815.3_ASM14781v3_genomic/CP002994.1.region002.gbk | CP002994.1.region002.gbk | MSMNPEAATTQVDVDFTLDVRVIEAGLPVR | DLLRDTSDNCGSSCSGTACTSFVGDPA         |
+| antiSMASH/GCA_000147815.3_ASM14781v3_genomic/CP002994.1.region037.gbk | CP002994.1.region037.gbk | MSTEAKNWKEAESTTSPAG            | AGFGELSLAELREDQSAHAPLSSGWVCTLTTECGC |
+| antiSMASH/GCA_000147815.3_ASM14781v3_genomic/CP002994.1.region037.gbk | CP002994.1.region037.gbk | VRELPRGCRADCGHVLQPTVRGG        | DQGCYRAATC                          |
 
 ### ex_completeness_from_gbk.py
 
