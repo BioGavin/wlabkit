@@ -319,3 +319,27 @@ Combine all tsv files in a folder into one file.
 concat_tsv.py tsv tsv/antismash.cds.len.tsv
 ```
 
+
+
+## shell
+
+### hoge
+
+Copy and rename files based on map.
+
+Usage:
+
+```bash
+# help
+hoge -h
+
+# usage
+hoge map.tsv
+```
+
+map.tsv:
+
+| wlabkit/astool/test_data/antiSMASH/GCA_003204095.1_ASM320409v1_genomic/CP029716.1.region002.gbk | seq1.gbk |
+| ------------------------------------------------------------ | -------- |
+| wlabkit/astool/test_data/antiSMASH/GCA_003204095.1_ASM320409v1_genomic/CP029716.1.region003.gbk | seq2.gbk |
+| wlabkit/astool/test_data/antiSMASH/GCA_003204095.1_ASM320409v1_genomic/CP029716.1.region001.gbk | seq3.gbk |
