@@ -122,6 +122,25 @@ knownclusterblast_hits_detail_output.tsv:
 
 ## extractGBK
 
+### ex_region_info_from_gbk.py
+
+Applicable: `antiSMASH` `?MIBiG`
+
+Usage:
+
+```bash
+ex_region_info_from_gbk.py gbk.list output.tsv
+```
+
+output.tsv:
+
+| file_dir                                                     | file_name                | bgc_type      | bgc_length |
+| ------------------------------------------------------------ | ------------------------ | ------------- | ---------- |
+| antiSMASH/GCA_000003645.1_ASM364v1_genomic/CM000714.1.region001.gbk | CM000714.1.region001.gbk | LAP+RiPP-like | 23507      |
+| antiSMASH/GCA_000003645.1_ASM364v1_genomic/CM000714.1.region002.gbk | CM000714.1.region002.gbk | NRPS          | 47158      |
+
+
+
 ### ex_ripp_from_gbk.py
 
 Applicable: `antiSMASH` `?MIBiG`
@@ -139,6 +158,8 @@ output.tsv:
 | antiSMASH/GCA_000147815.3_ASM14781v3_genomic/CP002994.1.region002.gbk | CP002994.1.region002.gbk | MSMNPEAATTQVDVDFTLDVRVIEAGLPVR | DLLRDTSDNCGSSCSGTACTSFVGDPA         |
 | antiSMASH/GCA_000147815.3_ASM14781v3_genomic/CP002994.1.region037.gbk | CP002994.1.region037.gbk | MSTEAKNWKEAESTTSPAG            | AGFGELSLAELREDQSAHAPLSSGWVCTLTTECGC |
 | antiSMASH/GCA_000147815.3_ASM14781v3_genomic/CP002994.1.region037.gbk | CP002994.1.region037.gbk | VRELPRGCRADCGHVLQPTVRGG        | DQGCYRAATC                          |
+
+
 
 ### ex_completeness_from_gbk.py
 

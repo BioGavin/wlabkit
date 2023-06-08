@@ -5,6 +5,7 @@
 /src/wlabkit.egg-info
 
 /tasks
+!/tasks/parse_antismash
 
 /plots
 
