@@ -5,9 +5,8 @@
 /src/wlabkit.egg-info
 
 /tasks
-!/tasks/parse_antismash
-
+/test_data
 /plots
 
-/astool/test_data
+
 

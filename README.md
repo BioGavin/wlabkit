@@ -7,6 +7,8 @@ Similar data processing tasks occur frequently in my daily work though these tas
 
 
 
+***⚠️⚠️⚠️ Attention: The astool project has ceased updates in this repository. Please visit [the new repository address for astool](https://github.com/BioGavin/astool). (📅: Sep 26, 2023)***
+
 # Contents
 
 1. [Installation](#sec_install)</br>
@@ -41,7 +43,7 @@ pip install wlabkit
 
 ### Latest version: 0.8.0
 
-⚠️***Attention:  Only the latest version has all the functions*** 
+⚠️ ***Attention:  Only the latest version has all the functions*** 
 
 
 
