@@ -3,7 +3,7 @@
 ## 1. format_cdhit_clstr.py
 
 ```bash
-format_cdhit_clstr.py -i demo90.faa.clstr -o test_data
+format_cdhit_clstr.py -i test_data/demo90.faa.clstr -o test_data
 ```
 
 Input:
