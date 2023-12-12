@@ -1,0 +1,12 @@
+/.idea
+
+# PyPI build
+/dist
+/src/wlabkit.egg-info
+
+/tasks
+/test_data
+/plots
+
+
+
